@@ -25,5 +25,10 @@ u8g2->font_decode.target_y = y;
 const uint8_t *glyph_data = u8g2_font_get_glyph_data(u8g2, encoding);
 ```
 
-Todo:
-1.) Putting 'const' into all the font array, since there's no "attribute" in that compiler. (Or maybe yes?)
+Issues:
+It seems that MikroC compiler doesn't want to read octal numbers in strings
+properly. Example, when the string is "\123", the compiler reads it as "1" and "23",
+causing the write string functions to immediately fail.
+
+Temporarily, a modification in the bdfconv must be done to convert the bdf into
+hex format in these strings for them to work properly.
