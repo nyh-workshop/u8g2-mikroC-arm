@@ -2249,15 +2249,15 @@ void bdfconv(int i, int fm, char *fms, int bm, char *bms, int mm, char *mms)
   if ( mm == MM_E ) strcat(bdf_cmd, " -m 32-701>32,7838,64256-64263");
   if ( mm == MM_C ) 
   {
-    strcat(bdf_cmd, " -m '");
+    strcat(bdf_cmd, " -m ");
     strcat(bdf_cmd, fi[i].map_custom);
-    strcat(bdf_cmd, "'");
+    strcat(bdf_cmd, "");
   }
   if ( mm == MM_M ) 
   {
-    strcat(bdf_cmd, " -M '");
+    strcat(bdf_cmd, " -M ");
     strcat(bdf_cmd, fi[i].map_custom);
-    strcat(bdf_cmd, "'");
+    strcat(bdf_cmd, "");
   }
 
   strcat(bdf_cmd, " ");
